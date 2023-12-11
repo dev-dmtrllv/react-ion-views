@@ -1,0 +1,58 @@
+{
+	"name": "@react-ion/views",
+	"version": "0.1.2",
+	"scripts": {
+		"build": "concurrently npm:build:*",
+        "build:esm": "tsc",
+        "build:cjs": "tsc -p tsconfig.cjs.json",
+        "watch": "concurrently npm:watch:*",
+        "watch:esm": "tsc --watch",
+        "watch:cjs": "tsc -p tsconfig.cjs.json --watch",
+        "watch:lib": "nodemon --watch lib --watch types --watch package.json --exec \"npm pack .\""
+	},
+	"author": "Dimitri Lilov",
+	"license": "MIT",
+	"files": [
+		"lib",
+		"package.json",
+		"package-lock.json",
+		"styles",
+		"types"
+	],
+	"main": "./lib/cjs/index.js",
+    "module": "./lib/esm/index.js",
+    "types": "./types/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./lib/cjs/index.js",
+            "node": "./lib/cjs/index.js",
+            "import": "./lib/esm/index.js",
+            "types": "./types/index.d.ts"
+        },
+        "./input": {
+            "require": "./lib/cjs/input/index.js",
+            "node": "./lib/cjs/input/index.js",
+            "import": "./lib/esm/input/index.js",
+            "types": "./types/input/index.d.ts"
+        }
+    },
+    "typesVersions": {
+        "*": {
+            "input": [
+                "types/input/index.d.ts"
+            ],
+            ".": [
+                "types/index.d.ts"
+            ]
+        }
+    },
+	"devDependencies": {
+		"@types/node": "^20.10.0",
+		"@types/react": "^18.2.38",
+		"@types/react-dom": "^18.2.17",
+		"typescript": "^5.3.2"
+	},
+	"dependencies": {
+		"concurrently": "^8.2.2"
+	}
+}
