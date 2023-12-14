@@ -2,7 +2,7 @@ import React, { forwardRef, useEffect, useRef } from "react";
 import { FlexBox, FlexItem, View, ViewProps } from "..";
 import { cn } from "../utils";
 
-import "../../styles/input/input.scss";
+import "../../../styles/input/input.scss";
 
 export const Input = forwardRef(({ type, name, onChange, placeholder = name, className, value = "", disabled, ...rest }: InputProps, ref: React.Ref<HTMLInputElement>) =>
 {

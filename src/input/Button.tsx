@@ -2,7 +2,7 @@ import React, { forwardRef, useMemo } from "react";
 import { ViewProps } from "../View";
 import { HtmlProps, cn } from "../utils";
 
-import "../../styles/input/buttons.scss";
+import "../../../styles/input/buttons.scss";
 
 export const Button = forwardRef(({ type = "button", fixed, absolute, relative, className, fill, centered, inline, float, ...props }: ButtonProps, ref: React.ForwardedRef<HTMLButtonElement>) =>
 {
@@ -22,6 +22,6 @@ export const Button = forwardRef(({ type = "button", fixed, absolute, relative, 
 	);
 });
 
-type ButtonProps = ViewProps<"button"> & HtmlProps<HTMLButtonElement, {
+type ButtonProps = Omit<ViewProps<"button">, "type"> & HtmlProps<HTMLButtonElement, {
 	type?: "submit" | "button" | "reset";
 }>;
