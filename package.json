@@ -1,6 +1,6 @@
 {
 	"name": "@react-ion/views",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"scripts": {
 		"build": "concurrently npm:build:*",
         "build:esm": "tsc",
